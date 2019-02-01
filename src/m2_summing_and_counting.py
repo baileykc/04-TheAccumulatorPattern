@@ -59,7 +59,7 @@ def run_test_sum_more_cosines():
 
     # Test 1:
     expected = 0.13416  # This is APPROXIMATELY the correct answer.
-    answer = sum_more_cosines(5, 6)
+    answer = run_test_sum_more_cosines()
     print('Test 1 expected:', expected, '(approximately)')
     if answer is not None:
         print('       actual:  ', round(answer, 5))
