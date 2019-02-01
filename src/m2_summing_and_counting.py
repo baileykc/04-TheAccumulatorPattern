@@ -59,7 +59,7 @@ def run_test_sum_more_cosines():
 
     # Test 1:
     expected = 0.13416  # This is APPROXIMATELY the correct answer.
-    answer = sum_more_cosines()
+    answer = sum_more_cosines(5, 6)
     print('Test 1 expected:', expected, '(approximately)')
     if answer is not None:
         print('       actual:  ', round(answer, 5))
@@ -70,7 +70,12 @@ def run_test_sum_more_cosines():
     # TODO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # -------------------------------------------------------------------------
+#Test 2
 
+
+
+
+#Test 3
 
 def sum_more_cosines(m, n):
     """
