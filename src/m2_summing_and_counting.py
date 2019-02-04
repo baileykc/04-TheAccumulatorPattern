@@ -32,7 +32,7 @@ def main():
 def run_test_sum_more_cosines():
     """ Tests the   sum_more_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  sum_more_cosines  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     #
@@ -59,7 +59,7 @@ def run_test_sum_more_cosines():
 
     # Test 1:
     expected = 0.13416  # This is APPROXIMATELY the correct answer.
-    answer = run_test_sum_more_cosines()
+    answer = sum_more_cosines(0, 3)
     print('Test 1 expected:', expected, '(approximately)')
     if answer is not None:
         print('       actual:  ', round(answer, 5))
@@ -67,10 +67,24 @@ def run_test_sum_more_cosines():
         print('       actual:  ', answer)
 
     # -------------------------------------------------------------------------
-    # TODO: 2 (continued).
+    # Done: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # -------------------------------------------------------------------------
-#Test 2
+    #Test 2
+    expected = .94
+    answer = sum_more_cosines(1,4)
+    print('Test 2 expected:', expected, '(approximately)')
+    if answer is not None:
+        print('       actual:  ', round(answer, 5))
+    else:
+        print('       actual:  ', answer)
+    #Test 3
+    expected = .9
+    answer = sum_more_cosines(0, 4)
+    print('Test 3 expected:', expected, '(approximately')
+    if answer is not None:
+        print('       actual:  ', answer)
+
 
 
 
@@ -78,6 +92,17 @@ def run_test_sum_more_cosines():
 #Test 3
 
 def sum_more_cosines(m, n):
+
+    import math
+
+    total = 0
+
+    for k in range (m, n+1):
+
+        total = total + math.cos(k)
+
+    return total
+
     """
     What comes in:  Integers m and n, with m <= n.
     What goes out:  Returns the sum
