@@ -73,10 +73,12 @@ def run_test_draw_squares_from_circle():
 
 
 def draw_squares_from_circle(n, circle, window):
+
+
     circle.attach_to(window)
     for k in range (n):
         r = circle.radius * k
-        center = rg.Point(circle.center.x + r, circle.cetner + r)
+        center = rg.Point(circle.center.x + r, circle.center.y + r)
         square = rg.Square(center, circle.radius * 2)
         square.attach_to(window)
         window.render(.05)
@@ -106,7 +108,7 @@ def draw_squares_from_circle(n, circle, window):
       :type window: rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -122,6 +124,7 @@ def draw_squares_from_circle(n, circle, window):
 
 
 def run_test_draw_circles_from_rectangle():
+
     """ Tests the   draw_circles_from_rectangle  function. """
     print()
     print('--------------------------------------------------')
@@ -145,7 +148,23 @@ def run_test_draw_circles_from_rectangle():
 
 
 def draw_circles_from_rectangle(m, n, rectangle, window):
-    """
+    rectangle.attatch_to(window)
+    center = rectangle.get_center()
+    for k in range(m):
+        no = rectangle.get_lower_left_corner().x-k + rectangle.get_height()
+        no = no - rectangle.get_height()/2
+        yes = rectangle.get_lower_left_corner().y - rectangle.get_height()/2
+        center = rg.Point(yes, no)
+        circle = rg.Circle(center, rectangle.get_height(0) / 2)
+        circle.fill_color = rectangle.fill_color
+        circle.attach_to(window)
+        window.render(.05)
+    for k in range(n):
+        no = rectangle.get_lower_left_corner().x-k * rectangle.get_width() / 2
+        yes = rectangle.get_lower_left_corner().x-k * rectangle.get_width()
+
+
+        """
     What comes in:  Four arguments:
       -- Positive integers m and n.
       -- An rg.Rectangle.
